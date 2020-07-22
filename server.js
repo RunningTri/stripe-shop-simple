@@ -14,7 +14,7 @@ app.set('view-engine', 'ejs');
 app.use(express.json());
 app.use(express.static('public'));
 
-const PORT = 80;
+const PORT = 3000;
 
 app.get('/store', function(request,response){
     fs.readFile('items.json', function(error, data){
@@ -62,7 +62,5 @@ app.post('/purchase', function(request,response){
 })
 
 })
-
-
-app.listen(PORT);
-console.log(stripeSecretKey);
+app.listen(process.env.PORT || PORT, 
+	() => console.log("Server is running..."));
