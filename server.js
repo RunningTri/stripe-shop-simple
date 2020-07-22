@@ -14,7 +14,7 @@ app.set('view-engine', 'ejs');
 app.use(express.json());
 app.use(express.static('public'));
 
-const PORT = 3000;
+const PORT = 80;
 
 app.get('/store', function(request,response){
     fs.readFile('items.json', function(error, data){
